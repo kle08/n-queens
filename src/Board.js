@@ -63,13 +63,12 @@
 
 
     /*
-             _             _     _
-         ___| |_ __ _ _ __| |_  | |__   ___ _ __ ___ _
-        / __| __/ _` | '__| __| | '_ \ / _ \ '__/ _ (_)
-        \__ \ || (_| | |  | |_  | | | |  __/ | |  __/_
-        |___/\__\__,_|_|   \__| |_| |_|\___|_|  \___(_)
-    
-     */
+         _             _     _
+     ___| |_ __ _ _ __| |_  | |__   ___ _ __ ___ _
+    / __| __/ _` | '__| __| | '_ \ / _ \ '__/ _ (_)
+    \__ \ || (_| | |  | |_  | | | |  __/ | |  __/_
+    |___/\__\__,_|_|   \__| |_| |_|\___|_|  \___(_)
+    */
     /*=========================================================================
     =                 TODO: fill in these Helper Functions                    =
     =========================================================================*/
@@ -103,6 +102,21 @@
       }
       return false;
     },
+    // hasRowConflictAt: function(rowIndex) {
+    //   return this.get(rowIndex).reduce((i,j)=> i+j) >1;
+    // },
+
+    // // test if any rows on this board contain conflicts
+    // hasAnyRowConflicts: function() {
+    //   var l = this.attributes.n;
+    //   for (let idx = 0; idx < l; idx++) {
+    //     var thisRow = this.attributes[idx];
+    //     if (this.hasRowConflictAt(idx)){
+    //       return true;
+    //     }
+    //   }
+    //   return false;
+    // },
 
 
 
@@ -123,18 +137,41 @@
       }
       return false;
     },
-
+    // hasColConflictAt: function(colIndex) {
+    //   var l = this.attributes.n;
+    //   var thisCol = [];
+    //   for (let j=0; j<l; j++){
+    //     thisCol.push(this.get(j)[colIndex]);
+    //   }
+    //   if (l===0){
+    //     return false;
+    //   }else{
+    //     return thisCol.reduce((i,j)=> i+j)>1;
+    //   }
+    // },
     // test if any columns on this board contain conflicts
+
+    // hasAnyColConflicts: function () {
+    //   var l = this.attributes.n;
+    //   for (let idx = 0; idx < l; idx++) {
+    //     if (this.hasColConflictAt(idx)) {
+    //       return true;
+    //     }
+    //   }
+    //   return false;
+    // },
+
     hasAnyColConflicts: function () {
       var matrix = this.rows();
       for (let index = 0; index < matrix.length; index++) {
         if (this.hasColConflictAt(index)) {
-          return true;
+          return true
         }
       }
-      return false;
+      return false
     },
 
+    // test if any columns on this board contain conflicts
 
 
     // Major Diagonals - go from top-left to bottom-right
